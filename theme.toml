@@ -1,12 +1,12 @@
-name = "juice"
-description = "An intuitive, elegant, and lightweight Zola theme for product sites."
+name = "hush"
+description = "A gentle and responsive Zola theme for product sites."
 license = "MIT"
-homepage = "https://github.com/huhu/juice"
+homepage = "https://github.com/azriel91/hush"
 min_version = "0.11.0"
-demo = "https://juice.huhu.io"
+demo = "https://peace.mk"
 
 [extra]
 
 [author]
-name = "Huhu teams"
-homepage = "https://huhu.io"
+name = "Huhu teams (Juice) and Azriel"
+homepage = "https://peace.mk"
