@@ -1,0 +1,76 @@
+{% extends "_base.html" %}
+
+{% block header %}
+<header>
+    {{ macros::render_header() }}
+</header>
+
+{% block splash %}
+<div class="hero">
+    {% block hero %}
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <section class="text-center">
+        <h1 class="heading-text" style="font-size: 50px">
+            Build your static website
+        </h1>
+        <h3 class="title-text">
+            <b>hush</b> is a gentle and responsive Zola theme for product sites.
+        </h3>
+        <div>
+            <a class="github-button" href="https://github.com/azriel91/hush" data-size="large" data-show-count="true"
+                aria-label="Star azriel91/hush on GitHub">Star</a>
+            <a class="github-button" href="https://github.com/azriel91/hush/fork" data-size="large"
+                data-show-count="true" aria-label="Fork azriel91/hush on GitHub">Fork</a>
+        </div>
+    </section>
+    <img class="hero-image" style="width: 50%" src="{{ get_url(path="dove.svg") }}">
+
+    <div class="explore-more text"
+        onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+        Explore More ⇩
+    </div>
+    <style>
+        .hero section {
+            padding: 0 5rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero section {
+                padding: 0 2rem;
+            }
+
+            .hero-image {
+                display: none
+            }
+        }
+    </style>
+    {% endblock hero %}
+</div>
+{% endblock splash %}
+
+<script>
+    const headerShadowHandler = entries => {
+        const heroElementVisible = entries.find(entry => {
+            return entry.isIntersecting && entry.intersectionRatio > 0.0;
+        });
+
+        const headerElement = document.querySelector("header");
+        if (heroElementVisible) {
+            headerElement.classList.remove("box-shadow");
+        } else {
+            // heroElement doesn't overlap the viewport
+            // add the shadow
+            if (!headerElement.classList.contains("box-shadow")) {
+                headerElement.classList.add("box-shadow");
+            }
+        }
+    };
+    // Set -100px root margin to improve highlight experience.
+    const heroScrollObserver = new IntersectionObserver(headerShadowHandler, {
+        threshold: 0
+    });
+    let heroElement = document.querySelector(".hero");
+    heroScrollObserver.observe(heroElement)
+</script>
+
+{% endblock header %}

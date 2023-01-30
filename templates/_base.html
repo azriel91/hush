@@ -20,51 +20,12 @@
 
 <body>
     {% block header %}
-
-    <header class="pos-absolute" style="background-color: transparent">
+    <header class="box-shadow">
         {{ macros::render_header() }}
     </header>
 
-    <div class="hero">
-        {% block hero %}
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
-        <section class="text-center">
-            <h1 class="heading-text" style="font-size: 50px">
-                Build your static website
-            </h1>
-            <h3 class="title-text">
-                <b>hush</b> is a gentle and responsive Zola theme for product sites.
-            </h3>
-            <div>
-                <a class="github-button" href="https://github.com/azriel91/hush" data-size="large" data-show-count="true"
-                    aria-label="Star azriel91/hush on GitHub">Star</a>
-                <a class="github-button" href="https://github.com/azriel91/hush/fork" data-size="large"
-                    data-show-count="true" aria-label="Fork azriel91/hush on GitHub">Fork</a>
-            </div>
-        </section>
-        <img class="hero-image" style="width: 50%" src="{{ get_url(path="dove.svg") }}">
-
-        <div class="explore-more text"
-            onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
-            Explore More ⇩
-        </div>
-        <style>
-            .hero section {
-                padding: 0 5rem;
-            }
-
-            @media screen and (max-width: 768px) {
-                .hero section {
-                    padding: 0 2rem;
-                }
-
-                .hero-image {
-                    display: none
-                }
-            }
-        </style>
-        {% endblock hero %}
-    </div>
+    {% block splash %}
+    {% endblock splash %}
 
     {% endblock header %}
 
@@ -109,11 +70,12 @@
     {% block footer %}
     <footer>
         <small class="subtext">
-            <a href="https://azriel91.io">Huhu.io</a> © 2021
+            <a href="https://github.com/azriel91/hush">hush</a> © 2023
         </small>
     </footer>
     {% endblock footer %}
 </body>
+
 <script>
     const scrollHandler = entries => {
         // Find the first entry which intersecting and ratio > 0.9 to highlight.

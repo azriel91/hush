@@ -1,6 +1,6 @@
 {% macro render_header() %}
-{% set section = get_section(path="_index.md") %}
-<a href="{{ section.permalink | safe }}">
+{% set root_section = get_section(path="_index.md") %}
+<a href="{{ root_section.permalink | safe }}">
     <div class="logo">
         <img src="{{ get_url(path=config.extra.hush_logo_path) }}" alt="logo">
         {{ config.extra.hush_logo_name }}
@@ -8,11 +8,17 @@
 </a>
 
 <nav>
-    {% for page in section.pages %}
+    {% for page in root_section.pages %}
     {% if config.extra.hush_exclude_menu is not containing(page.title) %}
     <a class="nav-item subtitle-text" href="{{ page.permalink | safe }}">{{ page.title }}</a>
     {% endif %}
     {% endfor %}
+
+    {% for subsection_path in root_section.subsections %}
+    {% set subsection = get_section(path=subsection_path, metadata_only=true) %}
+    <a class="nav-item subtitle-text" href="{{ subsection.permalink | safe }}">{{ subsection.title }}</a>
+    {% endfor %}
+
     {% if config.extra.hush_extra_menu %}
         {% for menu in config.extra.hush_extra_menu %}
         <a class="nav-item subtitle-text" href="{{ menu.link | safe }}">{{ menu.title }}</a>
