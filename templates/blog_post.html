@@ -1,0 +1,29 @@
+{% extends "_base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ get_url(path="blog_post.css") }}">
+{% endblock head %}
+
+{% block title %}{{ page.title }} | {{ super() }} {% endblock title %}
+
+{% block content %}
+<div class="heading-text">{{ page.description }}</div>
+
+<div id="post-info">
+    <div class="date">
+        <span id="publish">{{ page.date | date }}</span>
+        {% if page.updated and page.updated != page.date -%}
+        <span>Updated on <span id="updated">{{ page.updated | date }}</span></span>
+        {% endif -%}
+    </div>
+    <div class="tags">
+        {% for tag in page.taxonomies.tags -%}
+        {% set tag_slugify = tag | slugify -%}
+        <a class="tag" href="{{ config.base_url ~ '/tags/' ~ tag_slugify }}"><span>{{ tag }}</span></a>
+        {%- endfor %}
+    </div>
+</div>
+
+{{ page.content | safe }}
+
+{% endblock content %}

@@ -12,6 +12,12 @@ body {
   min-height: 100vh;
 }
 
+hr {
+  height: 0.5px;
+  width: 99%;
+  border-color: var(--code-background-color);
+}
+
 a {
   text-decoration: none;
 }
