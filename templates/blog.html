@@ -1,7 +1,12 @@
 {% extends "_base.html" %}
 
+{% block head %}
+<link rel="stylesheet" href="{{ get_url(path="blog.css") }}">
+{% endblock head %}
+
 {% block content %}
 <main>
+    <div class="blog_list">
     {% for category,posts in section.pages | group_by(attribute="taxonomies.categories.0") -%}
     <div class="title">{{ category }}</div>
     <div class="post-list">
@@ -24,5 +29,6 @@
         {% endif -%}
     </div>
     {% endfor -%}
+    </div>
 </main>
 {% endblock content %}
