@@ -35,6 +35,27 @@
   }
 }
 
+// header links should still use the primary colour
+.content h1 a, .content h2 a {
+  color: var(--primary-text-color);
+
+  &:hover {
+    text-decoration: underline;
+
+    &::after {
+      opacity: 1.0;
+    }
+  }
+
+  // Set opacity to 0.0 because adjusting font-size
+  // causes elements to jump when hovering.
+  &::after {
+    content: " 🔗";
+    font-size: 0.9em;
+    opacity: 0.0;
+  }
+}
+
 .content blockquote {
   border-left: #e2dede 8px solid;
   margin: 0;
