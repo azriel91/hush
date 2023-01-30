@@ -1,3 +1,9 @@
+main {
+  .content {
+    width: 800px;
+  }
+}
+
 #post-info {
   display: flex;
   justify-content: space-between;
@@ -36,8 +42,13 @@
   }
 }
 
-main {
-  .content {
-    width: 800px;
-  }
+.post_nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post_nav_button {
+  border-radius: 3px;
+  background-color: var(--toc-background-color);
+  padding: 0.75em 1.0em;
 }
