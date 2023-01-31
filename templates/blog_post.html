@@ -19,7 +19,7 @@
     <div class="tags">
         {% for tag in page.taxonomies.tags -%}
         {% set tag_slugify = tag | slugify -%}
-        <a class="tag" href="{{ config.base_url ~ '/tags/' ~ tag_slugify }}"><span>{{ tag }}</span></a>
+        <span class="tag"><span>{{ tag }}</span></span>
         {%- endfor %}
     </div>
 </div>
