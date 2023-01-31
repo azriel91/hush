@@ -1,5 +1,5 @@
 .breadcrumb {
-  width: 850px;
+  width: 750px;
   display: flex;
   justify-content: flex-start;
 }
@@ -17,12 +17,13 @@
 .breadcrumb_tab {
   display: flex;
   justify-content: space-between;
-  padding-right: 0.5em;
 }
 
 .breadcrumb_tab_end_wrapper {
   display: flex;
   flex-direction: column;
+  padding-left: 0.7em;
+  padding-right: 0.7em;
 }
 
 .breadcrumb_tab_end {
@@ -42,10 +43,6 @@
 
 .breadcrumb_link_wrapper {
   height: 100%;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-
 }
 
 .breadcrumb_link {

@@ -36,11 +36,15 @@
     {% endfor %}
 
     {# final page link #}
-    <div class="breadcrumb_tab">
-        <div class="breadcrumb_link_wrapper">
-            <a class="breadcrumb_link breadcrumb_link_sub" href="{{ page.permalink | safe }}">{{ page.title }}</a>
+
+    {% set ancestor_len = page.ancestors | length %}
+    {% if ancestor_len > 1 %}
+        <div class="breadcrumb_tab">
+            <div class="breadcrumb_link_wrapper">
+                <a class="breadcrumb_link breadcrumb_link_sub" href="{{ page.permalink | safe }}">{{ page.title }}</a>
+            </div>
         </div>
-    </div>
+    {% endif %}
 </div>
 {% elif section.path != "/" %} {# This is an inner section _index.md #}
 <div class="breadcrumb">
