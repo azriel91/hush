@@ -40,7 +40,8 @@
   color: var(--primary-text-color);
 
   &:hover {
-    text-decoration: underline;
+    color: var(--primary-text-color-over);
+    text-decoration: none;
 
     &::after {
       opacity: 1.0;

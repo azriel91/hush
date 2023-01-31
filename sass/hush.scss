@@ -65,6 +65,10 @@ header {
     width: 50px;
     margin: 0 25px;
   }
+
+  &:hover {
+    color: var(--primary-text-color-over);
+  }
 }
 
 .nav-item {
@@ -75,7 +79,6 @@ header {
 
   &:hover {
     color: var(--primary-text-color-over);
-    text-decoration: underline;
   }
 }
 
@@ -116,12 +119,16 @@ main {
 
     &:hover {
       cursor: pointer;
-      text-decoration: underline;
+      color: var(--primary-text-color-over);
     }
   }
 
   .toc-item a.active, .toc-item-child a.active {
     color: var(--toc-highlight-text-color);
+
+    &:hover {
+      color: var(--primary-text-color-over);
+    }
   }
 
   .toc-item-child {
