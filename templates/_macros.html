@@ -71,7 +71,7 @@
 
     {% if config.extra.hush_extra_menu %}
         {% for menu in config.extra.hush_extra_menu %}
-        <a class="nav-item subtitle-text" href="{{ menu.link | safe }}">{{ menu.title }}</a>
+        <a class="nav-item subtitle-text" href="{{ menu.link | safe }}" target="_blank">{{ menu.title }}</a>
         {% endfor %}
     {% endif %}
 </nav>
