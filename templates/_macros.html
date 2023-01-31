@@ -9,19 +9,18 @@
 
 {% if page.ancestors %}
 <div class="breadcrumb">
-    {% for parent_section_name in page.ancestors %}
-        {# Skip root page, as the logo link is available #}
-        {% if loop.first %}{% continue %}{% endif %}
-
+    {# Skip root page, as the logo link is available #}
+    {% for parent_section_name in page.ancestors | slice(start=1) %}
         {# Style main breadcrumb link differently #}
-        {% set parent_section = get_section(path=parent_section_name, metadata_only=true) %}
-        {% if loop.index == 2 %}
+        {% if loop.first %}
             {% set breadcrumb_link_main = "breadcrumb_link_main" %}
             {% set breadcrumb_link_sub = "" %}
         {% else %}
             {% set breadcrumb_link_main = "" %}
             {% set breadcrumb_link_sub = "breadcrumb_link_sub" %}
         {% endif %}
+
+        {% set parent_section = get_section(path=parent_section_name, metadata_only=true) %}
         <div class="breadcrumb_tab">
             <div class="breadcrumb_link_wrapper">
                 <a class="breadcrumb_link {{ breadcrumb_link_main }} {{ breadcrumb_link_sub }}" href="{{ parent_section.permalink | safe }}">{{ parent_section.title }}</a>
