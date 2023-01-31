@@ -2,6 +2,9 @@
 @import "_text.scss";
 @import "_markdown.scss";
 
+// Offset so that anchors are not hidden by header.
+:target { scroll-margin-top: 90px; }
+
 body {
   padding: 0;
   margin: 0;
