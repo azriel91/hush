@@ -28,14 +28,14 @@
 
 <div class="post_nav">
 {% if page.higher %}
-<a class="post_nav_button" href="{{ page.higher.permalink }}">Prev &gt;</a>
+<a class="post_nav_button" href="{{ page.higher.permalink }}">&lt; Prev</a>
 {% endif %}
 
 <!-- Empty spacer -->
 <div></div>
 
 {% if page.lower %}
-<a class="post_nav_button" href="{{ page.lower.permalink }}">&lt; Next</a>
+<a class="post_nav_button" href="{{ page.lower.permalink }}">Next &gt;</a>
 {% endif %}
 </div>
 
