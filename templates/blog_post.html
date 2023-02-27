@@ -27,15 +27,15 @@
 {{ page.content | safe }}
 
 <div class="post_nav">
-{% if page.lower %}
-<a class="post_nav_button" href="{{ page.lower.permalink }}">&lt; Prev</a>
+{% if page.higher %}
+<a class="post_nav_button" href="{{ page.higher.permalink }}">Prev &gt;</a>
 {% endif %}
 
 <!-- Empty spacer -->
 <div></div>
 
-{% if page.higher %}
-<a class="post_nav_button" href="{{ page.higher.permalink }}">Next &gt;</a>
+{% if page.lower %}
+<a class="post_nav_button" href="{{ page.lower.permalink }}">&lt; Next</a>
 {% endif %}
 </div>
 
