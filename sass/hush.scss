@@ -52,7 +52,7 @@ header {
   position: -ms-sticky;
   position: -o-sticky;
   top: 0px;
-  max-height: 10vh;
+  max-height: 8vh;
   overflow: auto;
 }
 
@@ -178,11 +178,11 @@ footer {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1280px) {
   header {
     padding: 10px 30px;
     align-items: center;
-    max-height: 10vh;
+    max-height: 6vh;
   }
 
   .logo {
