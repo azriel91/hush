@@ -27,3 +27,6 @@ hush_exclude_menu = [
     "exclude_from_nav"
 ]
 repository_url = "https://github.com/azriel91/hush"
+
+# If you have a google analytics code, set it here.
+# google_analytics_code = "G-ABCDE12345"
